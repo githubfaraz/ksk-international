@@ -70,38 +70,38 @@ const closeCartModal = () => {
 </script>
 
 <template>
-  <div class="bg-custom-image bg-cover bg-center h-screen text-white bg-transparent">
+  <div class="bg-custom-image bg-cover bg-center min-h-screen text-white bg-transparent">
     <div class="mx-auto px-4">
       <div class="flex items-center h-16 bg-transparent relative">
         <!-- Hamburger menu for small screens -->
-        <div class="md:hidden flex items-center absolute left-0">
+        <div class="md:hidden flex items-center">
           <button @click="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none bg-transparent">
             <i class="pi pi-bars text-2xl"></i>
           </button>
         </div>
-
+  
         <!-- Logo centered on small screens and on the left on larger screens -->
         <div class="flex-1 flex items-center justify-center md:justify-start">
           <NuxtLink to="/" class="flex items-center">
-            <img src="~/assets/images/ksk.svg" alt="Logo" class="h-10">
+            <img src="~/assets/images/ksk.svg" alt="Logo" class="h-8 md:h-10">
           </NuxtLink>
         </div>
-
-        <!-- Shopping cart icon on the right for larger screens -->
-        <div class="hidden lg:flex items-center">
+  
+        <!-- Shopping cart icon on the right for all screens -->
+        <div class="flex items-center">
           <i class="pi pi-shopping-cart text-2xl"></i>
         </div>
       </div>
-
+  
       <!-- Centered navigation items on large screens -->
-      <div class="hidden lg:flex justify-center my-4">
-        <nav class="flex gap-8 text-[20px]">
+      <div class="hidden md:flex justify-center my-4">
+        <nav class="flex gap-4 md:gap-8 text-base md:text-[20px]">
           <a href="#" class="hover:underline">Home</a>
           <a href="#" class="hover:underline">About</a>
           <a href="#" class="hover:underline">Products</a>
         </nav>
       </div>
-
+  
       <!-- Mobile menu -->
       <div v-if="isMenuOpen" class="md:hidden mt-2">
         <nav class="flex flex-col gap-4 text-[20px]">
@@ -113,18 +113,21 @@ const closeCartModal = () => {
       
       <!-- Centered text section -->
       <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center">
-          <h1 class="text-4xl font-bold mb-4">Welcome to KSK</h1>
-          <p class="text-lg">Discover amazing products and services tailored just for you.</p>
+        <div class="text-center px-4 md:px-8">
+          <h1 class="text-2xl md:text-4xl font-bold mb-4">Welcome to KSK</h1>
+          <p class="text-base md:text-lg">Discover amazing products and services tailored just for you.</p>
         </div>
       </div>
     </div>
   </div>
 
+  
+  
+
   <h3 class="font-bold text-[24px] flex justify-center mt-16 mb-4">Products By Categories</h3>
 
-  <div class="flex flex-col pl-12 md:flex-row gap-12 pt-4 justify-center">
-    <Card style="width: 25rem; overflow: hidden">
+  <div class="flex flex-col gap-8 p-4 sm:gap-12 md:flex-row md:justify-center md:p-0">
+    <Card class="w-full sm:w-[25rem] md:w-[25rem] overflow-hidden">
       <template #header>
         <img
           alt="user header"
@@ -141,7 +144,7 @@ const closeCartModal = () => {
         </p>
       </template>
     </Card>
-    <Card style="width: 25rem; overflow: hidden">
+    <Card class="w-full sm:w-[25rem] md:w-[25rem] overflow-hidden">
       <template #header>
         <img
           alt="user header"
@@ -158,7 +161,7 @@ const closeCartModal = () => {
         </p>
       </template>
     </Card>
-    <Card style="width: 25rem; overflow: hidden">
+    <Card class="w-full sm:w-[25rem] md:w-[25rem] overflow-hidden">
       <template #header>
         <img
           alt="user header"
@@ -175,6 +178,7 @@ const closeCartModal = () => {
       </template>
     </Card>
   </div>
+  
   <div class="mx-auto px-4 py-8">
     <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
     
@@ -242,7 +246,7 @@ const closeCartModal = () => {
       </div>
     </transition>
   </div>
-  <section class="flex flex-col lg:flex-row items-center lg:justify-between px-4 py-16 bg-gray-100 h-[480px]">
+  <section class="flex flex-col lg:flex-row items-center lg:justify-between px-4 py-16 bg-gray-100 ">
     <!-- Image on the left -->
     <div class="flex-1 lg:mr-8 mb-8 lg:mb-0">
       <img src="https://images.pexels.com/photos/1125130/pexels-photo-1125130.jpeg" alt="Description Image" class="w-full object-cover rounded-lg shadow-lg h-[420px]">
