@@ -73,44 +73,47 @@ const closeCartModal = () => {
   <div
     class="bg-custom-image bg-cover bg-center h-screen text-white bg-transparent"
   >
-    <div class=" mx-auto px-4">
-      <div class="flex justify-between items-center h-16 bg-transparent">
-        <!-- Hamburger menu for small screens -->
-        <div class="md:hidden">
-          <button
-            @click="isMenuOpen = !isMenuOpen"
-            class="text-white focus:outline-none bg-transparent"
-          >
-            <i class="pi pi-bars text-2xl"></i>
-          </button>
-        </div>
-
-        <!-- Menu items for medium and large screens -->
-        <div
-          class="hidden md:flex items-center justify-center flex-grow bg-transparent"
-        >
-          <nav class="flex gap-8 text-[20px]">
-            <a href="#" class="hover:underline">Home</a>
-            <a href="#" class="hover:underline">About</a>
-            <a href="#" class="hover:underline">Products</a>
-          </nav>
-        </div>
-
-        <!-- Shopping cart icon -->
-        <div>
-          <i class="pi pi-shopping-cart text-2xl"></i>
-        </div>
+  <div class="mx-auto px-4">
+    <div class="flex items-center h-16 bg-transparent relative">
+      <!-- Hamburger menu for small screens -->
+      <div class="md:hidden flex items-center absolute left-0">
+        <button @click="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none bg-transparent">
+          <i class="pi pi-bars text-2xl"></i>
+        </button>
       </div>
-
-      <!-- Mobile menu -->
-      <div v-if="isMenuOpen" class="md:hidden mt-2">
-        <nav class="flex flex-col gap-4 text-[20px]">
-          <a href="#" class="hover:underline">Home</a>
-          <a href="#" class="hover:underline">About</a>
-          <a href="#" class="hover:underline">Products</a>
-        </nav>
+  
+      <!-- Logo centered on small screens and on the left on larger screens -->
+      <div class="flex-1 flex items-center justify-center md:justify-start">
+        <NuxtLink to="/" class="flex items-center">
+          <img src="~/assets/images/ksk.svg" alt="Logo" class="h-10">
+        </NuxtLink>
+      </div>
+  
+      <!-- Shopping cart icon on the right for larger screens -->
+      <div class="hidden lg:flex items-center">
+        <i class="pi pi-shopping-cart text-2xl"></i>
       </div>
     </div>
+  
+    <!-- Centered navigation items on large screens -->
+    <div class="hidden lg:flex justify-center my-4">
+      <nav class="flex gap-8 text-[20px]">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Products</a>
+      </nav>
+    </div>
+  
+    <!-- Mobile menu -->
+    <div v-if="isMenuOpen" class="md:hidden mt-2">
+      <nav class="flex flex-col gap-4 text-[20px]">
+        <a href="#" class="hover:underline">Home</a>
+        <a href="#" class="hover:underline">About</a>
+        <a href="#" class="hover:underline">Products</a>
+      </nav>
+    </div>
+  </div>
+  
   </div>
 
   <h3 class="font-bold text-[24px] flex justify-center mt-16 mb-4">Products By Categories</h3>
