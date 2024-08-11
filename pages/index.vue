@@ -18,11 +18,11 @@ const submitForm = () => {
 };
 // Sample product data
 const products = ref([
-  { id: 1, name: 'Executive Chair', price: 299.99, image: 'https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg' },
-  { id: 2, name: 'Ergonomic Desk', price: 499.99, image: 'https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg' },
-  { id: 3, name: 'Filing Cabinet', price: 199.99, image: 'https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg' },
-  { id: 4, name: 'Office Lamp', price: 79.99, image: 'https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg' },
-  { id: 5, name: 'Bookshelf', price: 249.99, image: 'https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg' },
+  { id: 1, name: 'Executive Chair', price: 299.99, image: 'https://images.pexels.com/photos/7084319/pexels-photo-7084319.jpeg' },
+  { id: 2, name: 'Ergonomic Desk', price: 499.99, image: 'https://images.pexels.com/photos/25526520/pexels-photo-25526520.jpeg' },
+  { id: 3, name: 'Filing Cabinet', price: 199.99, image: 'https://images.pexels.com/photos/1370294/pexels-photo-1370294.jpeg' },
+  { id: 4, name: 'Office Lamp', price: 79.99, image: 'https://images.pexels.com/photos/840996/pexels-photo-840996.jpeg' },
+  { id: 5, name: 'Bookshelf', price: 249.99, image: 'https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg' },
 ]);
 
 const cart = reactive({
@@ -70,50 +70,55 @@ const closeCartModal = () => {
 </script>
 
 <template>
-  <div
-    class="bg-custom-image bg-cover bg-center h-screen text-white bg-transparent"
-  >
-  <div class="mx-auto px-4">
-    <div class="flex items-center h-16 bg-transparent relative">
-      <!-- Hamburger menu for small screens -->
-      <div class="md:hidden flex items-center absolute left-0">
-        <button @click="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none bg-transparent">
-          <i class="pi pi-bars text-2xl"></i>
-        </button>
+  <div class="bg-custom-image bg-cover bg-center h-screen text-white bg-transparent">
+    <div class="mx-auto px-4">
+      <div class="flex items-center h-16 bg-transparent relative">
+        <!-- Hamburger menu for small screens -->
+        <div class="md:hidden flex items-center absolute left-0">
+          <button @click="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none bg-transparent">
+            <i class="pi pi-bars text-2xl"></i>
+          </button>
+        </div>
+
+        <!-- Logo centered on small screens and on the left on larger screens -->
+        <div class="flex-1 flex items-center justify-center md:justify-start">
+          <NuxtLink to="/" class="flex items-center">
+            <img src="~/assets/images/ksk.svg" alt="Logo" class="h-10">
+          </NuxtLink>
+        </div>
+
+        <!-- Shopping cart icon on the right for larger screens -->
+        <div class="hidden lg:flex items-center">
+          <i class="pi pi-shopping-cart text-2xl"></i>
+        </div>
       </div>
-  
-      <!-- Logo centered on small screens and on the left on larger screens -->
-      <div class="flex-1 flex items-center justify-center md:justify-start">
-        <NuxtLink to="/" class="flex items-center">
-          <img src="~/assets/images/ksk.svg" alt="Logo" class="h-10">
-        </NuxtLink>
+
+      <!-- Centered navigation items on large screens -->
+      <div class="hidden lg:flex justify-center my-4">
+        <nav class="flex gap-8 text-[20px]">
+          <a href="#" class="hover:underline">Home</a>
+          <a href="#" class="hover:underline">About</a>
+          <a href="#" class="hover:underline">Products</a>
+        </nav>
       </div>
-  
-      <!-- Shopping cart icon on the right for larger screens -->
-      <div class="hidden lg:flex items-center">
-        <i class="pi pi-shopping-cart text-2xl"></i>
+
+      <!-- Mobile menu -->
+      <div v-if="isMenuOpen" class="md:hidden mt-2">
+        <nav class="flex flex-col gap-4 text-[20px]">
+          <a href="#" class="hover:underline">Home</a>
+          <a href="#" class="hover:underline">About</a>
+          <a href="#" class="hover:underline">Products</a>
+        </nav>
+      </div>
+      
+      <!-- Centered text section -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold mb-4">Welcome to KSK</h1>
+          <p class="text-lg">Discover amazing products and services tailored just for you.</p>
+        </div>
       </div>
     </div>
-  
-    <!-- Centered navigation items on large screens -->
-    <div class="hidden lg:flex justify-center my-4">
-      <nav class="flex gap-8 text-[20px]">
-        <a href="#" class="hover:underline">Home</a>
-        <a href="#" class="hover:underline">About</a>
-        <a href="#" class="hover:underline">Products</a>
-      </nav>
-    </div>
-  
-    <!-- Mobile menu -->
-    <div v-if="isMenuOpen" class="md:hidden mt-2">
-      <nav class="flex flex-col gap-4 text-[20px]">
-        <a href="#" class="hover:underline">Home</a>
-        <a href="#" class="hover:underline">About</a>
-        <a href="#" class="hover:underline">Products</a>
-      </nav>
-    </div>
-  </div>
-  
   </div>
 
   <h3 class="font-bold text-[24px] flex justify-center mt-16 mb-4">Products By Categories</h3>
@@ -140,16 +145,16 @@ const closeCartModal = () => {
       <template #header>
         <img
           alt="user header"
-          src="https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg"
+          src="https://images.pexels.com/photos/2528118/pexels-photo-2528118.jpeg"
           class="w-full h-auto"
         />
       </template>
       <template #title>Home office Furniture</template>
-      <template #subtitle>Sleek Business Chair</template>
+      <template #subtitle>Sleek Business Desk</template>
       <template #content>
         <p class="m-0">
-          Find comfort in this exquisite chair meant to impress and make your
-          guests comfortable
+          Find comfort in this exquisite Desk meant to impress and
+          improve security &amp; posture
         </p>
       </template>
     </Card>
@@ -157,16 +162,15 @@ const closeCartModal = () => {
       <template #header>
         <img
           alt="user header"
-          src="https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg"
+          src="https://images.pexels.com/photos/8001042/pexels-photo-8001042.jpeg"
           class="w-full h-auto"
         />
       </template>
       <template #title></template>
-      <template #subtitle>Sleek Business Chair</template>
+      <template #subtitle>Standing Desk</template>
       <template #content>
         <p class="m-0">
-          Find comfort in this exquisite chair meant to impress and make your
-          guests comfortable
+          Find comfort in this standing desk to sort out your back issues
         </p>
       </template>
     </Card>
@@ -238,6 +242,23 @@ const closeCartModal = () => {
       </div>
     </transition>
   </div>
+  <section class="flex flex-col lg:flex-row items-center lg:justify-between px-4 py-16 bg-gray-100 h-[480px]">
+    <!-- Image on the left -->
+    <div class="flex-1 lg:mr-8 mb-8 lg:mb-0">
+      <img src="https://images.pexels.com/photos/1125130/pexels-photo-1125130.jpeg" alt="Description Image" class="w-full object-cover rounded-lg shadow-lg h-[420px]">
+    </div>
+    
+    <!-- Text on the right -->
+    <div class="flex-1">
+      <h2 class="text-3xl font-semibold mb-4">Our Services</h2>
+      <p class="text-lg mb-4">
+        We offer a wide range of services to meet your needs. From customized solutions to top-notch support, our team is here to ensure you get the best experience possible.
+      </p>
+      <p class="text-lg">
+        Explore our services and find out how we can help you achieve your goals. Our commitment to excellence and customer satisfaction sets us apart in the industry.
+      </p>
+    </div>
+  </section>
   <div class="contact-section bg-transparent py-16">
     <div class=" mx-auto px-4">
       <h3 class="text-3xl font-bold text-center mb-8">Contact Us</h3>
