@@ -1,7 +1,11 @@
 <script setup>
-const isMenuOpen = ref(false);
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed } from 'vue';
 
+// State for menu and cart
+const isMenuOpen = ref(false);
+const isCartModalOpen = ref(false);
+
+// Form handling
 const form = reactive({
   name: '',
   email: '',
@@ -9,13 +13,12 @@ const form = reactive({
 });
 
 const submitForm = () => {
-  // Here you would typically send the form data to your backend
   console.log('Form submitted:', form);
-  // Reset form after submission
   form.name = '';
   form.email = '';
   form.message = '';
 };
+
 // Sample product data
 const products = ref([
   { id: 1, name: 'Executive Chair', price: 299.99, image: 'https://images.pexels.com/photos/7084319/pexels-photo-7084319.jpeg' },
@@ -29,8 +32,6 @@ const cart = reactive({
   items: [],
   total: 0,
 });
-
-const isCartModalOpen = ref(false);
 
 const addToCart = (product) => {
   const existingItem = cart.items.find(item => item.id === product.id);
@@ -67,55 +68,60 @@ const openCartModal = () => {
 const closeCartModal = () => {
   isCartModalOpen.value = false;
 };
+
+const toggleMenu = () => {
+  isMenuOpen.value = !isMenuOpen.value;
+};
 </script>
+
 
 <template>
   <div class="bg-custom-image bg-cover bg-center min-h-screen text-white bg-transparent">
     <div class="mx-auto px-4">
-      <div class="flex items-center h-16 bg-transparent relative">
-        <!-- Hamburger menu for small screens -->
-        <div class="md:hidden flex items-center">
-          <button @click="isMenuOpen = !isMenuOpen" class="text-white focus:outline-none bg-transparent">
-            <i class="pi pi-bars text-2xl"></i>
-          </button>
+      <div class="flex flex-col">
+        <!-- Header section -->
+        <div class="flex items-center h-16 bg-transparent relative z-20">
+          <!-- Hamburger menu for small screens -->
+          <div class="md:hidden flex items-center">
+            <button @click="toggleMenu" class="text-white focus:outline-none bg-transparent z-30">
+              <i class="pi pi-bars text-2xl"></i>
+            </button>
+          </div>
+          
+          <!-- Logo centered on small screens and on the left on larger screens -->
+          <div class="flex-1 flex items-center justify-center md:justify-start">
+            <NuxtLink to="/" class="flex items-center">
+              <img src="~/assets/images/ksk.svg" alt="Logo" class="h-8 md:h-10">
+            </NuxtLink>
+          </div>
+          
+          <!-- Shopping cart icon on the right for all screens -->
         </div>
   
-        <!-- Logo centered on small screens and on the left on larger screens -->
-        <div class="flex-1 flex items-center justify-center md:justify-start">
-          <NuxtLink to="/" class="flex items-center">
-            <img src="~/assets/images/ksk.svg" alt="Logo" class="h-8 md:h-10">
-          </NuxtLink>
+        <!-- Centered navigation items on large screens -->
+        <div class="hidden md:flex justify-center my-4">
+          <nav class="flex gap-4 md:gap-8 text-base md:text-[20px]">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#" class="hover:underline">About</a>
+            <a href="#" class="hover:underline">Products</a>
+          </nav>
         </div>
   
-        <!-- Shopping cart icon on the right for all screens -->
-        <div class="flex items-center">
-          <i class="pi pi-shopping-cart text-2xl"></i>
+        <!-- Mobile menu -->
+        <div v-if="isMenuOpen" class="md:hidden mt-2 z-20">
+          <nav class="flex flex-col gap-4 text-[20px]">
+            <a href="#" class="hover:underline">Home</a>
+            <a href="#" class="hover:underline">About</a>
+            <a href="#" class="hover:underline">Products</a>
+          </nav>
         </div>
-      </div>
   
-      <!-- Centered navigation items on large screens -->
-      <div class="hidden md:flex justify-center my-4">
-        <nav class="flex gap-4 md:gap-8 text-base md:text-[20px]">
-          <a href="#" class="hover:underline">Home</a>
-          <a href="#" class="hover:underline">About</a>
-          <a href="#" class="hover:underline">Products</a>
-        </nav>
-      </div>
-  
-      <!-- Mobile menu -->
-      <div v-if="isMenuOpen" class="md:hidden mt-2">
-        <nav class="flex flex-col gap-4 text-[20px]">
-          <a href="#" class="hover:underline">Home</a>
-          <a href="#" class="hover:underline">About</a>
-          <a href="#" class="hover:underline">Products</a>
-        </nav>
-      </div>
-      
-      <!-- Centered text section -->
-      <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center px-4 md:px-8">
-          <h1 class="text-2xl md:text-4xl font-bold mb-4">Welcome to KSK</h1>
-          <p class="text-base md:text-lg">Discover amazing products and services tailored just for you.</p>
+        <!-- Centered text section -->
+        <div class="flex items-center justify-center flex-grow pt-24">
+          <div class="text-center px-4 md:px-8">
+            <h1 class="text-2xl md:text-4xl font-bold mb-4">Welcome to KSK</h1>
+            <p class="text-base md:text-lg">Discover amazing products and services tailored just for you.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -210,8 +216,8 @@ const closeCartModal = () => {
     </Carousel>
 
     <!-- Cart button -->
-    <button @click="openCartModal" class="fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
-      Cart ({{ cartItemCount }})
+    <button @click="openCartModal" class="fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 flex items-center gap-2">
+      <i class="pi pi-shopping-cart text-2xl"></i> ({{ cartItemCount }})
     </button>
 
     <!-- Cart Modal -->
