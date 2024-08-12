@@ -207,7 +207,7 @@ const toggleMenu = () => {
             <img :src="slotProps.data.image" :alt="slotProps.data.name" class="w-full h-48 object-cover mb-4 rounded" />
             <h4 class="text-xl mb-2">{{ slotProps.data.name }}</h4>
             <h6 class="text-gray-600 mb-4">${{ slotProps.data.price.toFixed(2) }}</h6>
-            <button @click="addToCart(slotProps.data)" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
+            <button @click="addToCart(slotProps.data)" class="mycol text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
               Add to Cart
             </button>
           </div>
@@ -216,7 +216,7 @@ const toggleMenu = () => {
     </Carousel>
 
     <!-- Cart button -->
-    <button @click="openCartModal" class="fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 flex items-center gap-2">
+    <button @click="openCartModal" class="fixed top-4 right-4 mycol text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 flex items-center gap-2">
       <i class="pi pi-shopping-cart text-2xl"></i> ({{ cartItemCount }})
     </button>
 
@@ -290,13 +290,13 @@ const toggleMenu = () => {
             <textarea id="message" v-model="form.message" rows="4" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
           </div>
           
-          <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Send Message</button>
+          <button type="submit" class="w-full mycol text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300">Send Message</button>
         </form>
       </div>
     </div>
   </div>
 
-  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 pt-8 bg-blue-500 text-white px-4 py-8">
+  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 pt-8 mycol text-white px-4 py-8">
     <div class="mb-6 sm:mb-0">
       <h2 class="font-bold text-lg mb-3">Shop Categories</h2>
       <p class="mb-2">Office Furniture</p>
@@ -322,5 +322,8 @@ const toggleMenu = () => {
 <style scoped>
 .container {
   background-image: url("@/assets/images/bg1.jpg");
+}
+.mycol{
+  background-color: rgb(158,40,41); 
 }
 </style>
