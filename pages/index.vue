@@ -296,27 +296,49 @@ const toggleMenu = () => {
     </div>
   </div>
 
-  <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 pt-8 mycol text-white px-4 py-8">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 pt-8 mycol text-white px-4 py-8">
+    <!-- Shop Categories -->
     <div class="mb-6 sm:mb-0">
       <h2 class="font-bold text-lg mb-3">Shop Categories</h2>
       <p class="mb-2">Office Furniture</p>
-      <p class="mb-2">Home office Furniture</p>
+      <p class="mb-2">Home Office Furniture</p>
     </div>
+  
+    <!-- Useful Links -->
     <div class="mb-6 sm:mb-0">
       <h3 class="font-bold text-lg mb-3">Useful Links</h3>
       <p class="mb-2">Designs</p>
       <p class="mb-2">Careers</p>
     </div>
+  
+    <!-- Account -->
     <div class="mb-6 sm:mb-0">
       <h3 class="font-bold text-lg mb-3">Account</h3>
       <p class="mb-2">Login</p>
       <p class="mb-2">Cart</p>
     </div>
+  
+    <!-- About Company -->
     <div>
       <h3 class="font-bold text-lg mb-3">About Company</h3>
       <p class="mb-2">Our Partners</p>
     </div>
+  
+    <!-- Get in Touch -->
+    <div class="flex flex-col">
+      <h3 class="font-bold text-lg mb-3">Get in Touch</h3>
+      <p class="mb-2">147 W 35th St, New York, NY 10001</p>
+      <p class="mb-2">Phone: +1 (917) 6094-597</p>
+      <p>Email: <a href="mailto:info@zemy-group.com" class="hover:text-gray-400">info@zemy-group.com</a></p>
+    </div>
+  
+    <!-- Copyright Section -->
+    <div class="col-span-full text-center mt-6">
+      <p>&copy; 2024 @ Zemy Group LLC. All Rights Reserved.</p>
+    </div>
   </div>
+  
+  
 </template>
 
 <style scoped>
