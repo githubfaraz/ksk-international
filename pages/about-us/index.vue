@@ -51,7 +51,7 @@ import { Award, TrendingUp } from 'lucide-vue-next';
     <div>
         <div class=" flex flex-col items-center space-y-6 my-20">
             <h3 class="text-4xl text-center">Discover KSK -<br /> Where Innovation Meets Design</h3>
-            <img class="object-cover h-48 rounded-md" style="width: 1620px;height: 550px;" src="/assets/images/bg1.jpg"
+            <img class="object-cover h-48 rounded-md" style="width: 1600px;height: 550px;" src="/assets/images/bg1.jpg"
                 alt="sofa">
         </div>
     </div>
@@ -69,20 +69,22 @@ import { Award, TrendingUp } from 'lucide-vue-next';
 
 
         <div>
-            <div class="flex flex-col space-y-4 items-center my-4">
-                <div class="flex flex-row justify-between" style="width: 1620px;">
-                    <div style="width: 720px;">
+            <div class="flex flex-col space-y-12 items-center my-4">
+
+
+                <div class="flex flex-row justify-between" style="width: 1600px;">
+                    <div style="min-width: 800px;">
                         <img src="/assets/images/bg1.jpg" class="h-96 object-cover w-11/12 rounded-md" alt="">
                     </div>
 
-                    <div style="max-width: 920px;" class="align-middle my-auto">
+                    <div style="max-width: 800px;" class="align-middle my-auto">
                         <div class="flex items-center rounded-md bg-slate-300 p-8" style="width: 100px;height: 50px;">
                             <Award />
 
                         </div>
 
                         <h3 class="text-xl font-semibold mb-2">From Humble Beginnings</h3>
-                        <h3 style="" class="w-3/4">Our Story began in 2010 in a small workshop,driven by a passion for
+                        <h3 style="" class="w-10/12">Our Story began in 2010 in a small workshop,driven by a passion for
                             creating beautiful
                             and
                             comfortbale furniture. What started as a modest operation has grown into a beloved brand known
@@ -90,15 +92,80 @@ import { Award, TrendingUp } from 'lucide-vue-next';
                             its quality and design</h3>
                     </div>
                 </div>
+
+                <div class="flex flex-row-reverse justify-between" style="width: 1600px;">
+                    <div style="min-width: 800px;">
+                        <img src="/assets/images/bg1.jpg" class="h-96 object-cover w-11/12 rounded-md" alt="">
+                    </div>
+
+                    <div style="max-width: 800px;" class="align-middle my-auto">
+                        <div class="flex items-center rounded-md bg-slate-300 p-8" style="width: 100px;height: 50px;">
+                            <Award />
+
+                        </div>
+
+                        <h3 class="text-xl font-semibold mb-2">From Humble Beginnings</h3>
+                        <h3 style="" class="w-10/12">Our Story began in 2010 in a small workshop,driven by a passion for
+                            creating beautiful
+                            and
+                            comfortbale furniture. What started as a modest operation has grown into a beloved brand known
+                            for
+                            its quality and design</h3>
+                    </div>
+                </div>
+
+                <div class="flex flex-row justify-between" style="width: 1600px;">
+                    <div style="min-width: 800px;">
+                        <img src="/assets/images/bg1.jpg" class="h-96 object-cover w-11/12 rounded-md" alt="">
+                    </div>
+
+                    <div style="max-width: 800px;" class="align-middle my-auto">
+                        <div class="flex items-center rounded-md bg-slate-300 p-8" style="width: 100px;height: 50px;">
+                            <Award />
+
+                        </div>
+
+                        <h3 class="text-xl font-semibold mb-2">From Humble Beginnings</h3>
+                        <h3 style="" class="w-10/12">Our Story began in 2010 in a small workshop,driven by a passion for
+                            creating beautiful
+                            and
+                            comfortbale furniture. What started as a modest operation has grown into a beloved brand known
+                            for
+                            its quality and design</h3>
+                    </div>
+                </div>
+
+                <div class="flex flex-row-reverse justify-between" style="width: 1600px;">
+                    <div style="min-width: 800px;">
+                        <img src="/assets/images/bg1.jpg" class="h-96 object-cover w-11/12 rounded-md" alt="">
+                    </div>
+
+                    <div style="max-width: 800px;" class="align-middle my-auto">
+                        <div class="flex items-center rounded-md bg-slate-300 p-8" style="width: 100px;height: 50px;">
+                            <Award />
+
+                        </div>
+
+                        <h3 class="text-xl font-semibold mb-2">From Humble Beginnings</h3>
+                        <h3 style="" class="w-10/12">Our Story began in 2010 in a small workshop,driven by a passion for
+                            creating beautiful
+                            and
+                            comfortbale furniture. What started as a modest operation has grown into a beloved brand known
+                            for
+                            its quality and design</h3>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
 
     <hr>
-    <div class="flex flex-row align-middle items-center text-center py-4">
-        <div>
-            <img src="/assets/images/ksk.svg" style="width: 100px;margin: auto 0;" alt="">
-        </div>
+    <div class="flex flex-row align-middle items-center text-center py-4 w-full">
+        <!-- <div> -->
+        <img src="/assets/images/ksk.svg" class="mx-auto" style="width: 100px;" alt="">
+        <!-- </div> -->
     </div>
     <hr>
 
