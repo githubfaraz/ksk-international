@@ -76,7 +76,7 @@ const toggleMenu = () => {
 
 
 <template>
-  <div class="bg-custom-image bg-cover bg-center min-h-screen text-white bg-transparent">
+  <div class="bg-custom-image bg-cover bg-center h-[620px] text-white bg-transparent">
     <div class="mx-auto px-4">
       <div class="flex flex-col">
         <!-- Header section -->
