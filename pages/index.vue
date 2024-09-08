@@ -1,5 +1,6 @@
 <script setup>
 import { ref, reactive, computed } from 'vue';
+import Navbar from '~/layouts/navbar.vue';
 
 // State for menu and cart
 const isMenuOpen = ref(false);
@@ -76,45 +77,19 @@ const toggleMenu = () => {
 
 
 <template>
+  <Navbar />
   <div class="bg-custom-image bg-cover bg-center h-[620px] text-white bg-transparent">
     <div class="mx-auto px-4">
       <div class="flex flex-col">
         <!-- Header section -->
         <div class="flex items-center h-16 bg-transparent relative z-20">
           <!-- Hamburger menu for small screens -->
-          <div class="md:hidden flex items-center">
-            <button @click="toggleMenu" class="text-white focus:outline-none bg-transparent z-30">
-              <i class="pi pi-bars text-2xl"></i>
-            </button>
-          </div>
 
-          <!-- Logo centered on small screens and on the left on larger screens -->
-          <div class="flex-1 flex items-center justify-center md:justify-start">
-            <NuxtLink to="/" class="flex items-center">
-              <img src="~/assets/images/ksk.svg" alt="Logo" class="h-8 md:h-10">
-            </NuxtLink>
-          </div>
 
           <!-- Shopping cart icon on the right for all screens -->
         </div>
 
-        <!-- Centered navigation items on large screens -->
-        <div class="hidden md:flex justify-center my-4">
-          <nav class="flex gap-4 md:gap-8 text-base md:text-[20px]">
-            <a href="#" class="hover:underline">Home</a>
-            <a href="/about-us" class="hover:underline">About</a>
-            <a href="#" class="hover:underline">Products</a>
-          </nav>
-        </div>
 
-        <!-- Mobile menu -->
-        <div v-if="isMenuOpen" class="md:hidden mt-2 z-20">
-          <nav class="flex flex-col gap-4 text-[20px]">
-            <a href="#" class="hover:underline">Home</a>
-            <a href="/aboutUs" class="hover:underline">About</a>
-            <a href="#" class="hover:underline">Products</a>
-          </nav>
-        </div>
 
         <!-- Centered text section -->
         <div class="flex items-center justify-center flex-grow pt-24">
@@ -208,10 +183,7 @@ const toggleMenu = () => {
     </Carousel>
 
     <!-- Cart button -->
-    <button @click="openCartModal"
-      class="fixed top-4 right-4 mycol text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 flex items-center gap-2">
-      <i class="pi pi-shopping-cart text-2xl"></i> ({{ cartItemCount }})
-    </button>
+
 
     <!-- Cart Modal -->
     <transition name="modal">

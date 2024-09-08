@@ -1,41 +1,24 @@
+
+<script setup>
+import Navbar from '~/layouts/navbar.vue';
+
+
+</script>
+
 <template>
+    <Navbar />
+
     <div class="bg-custom-image bg-cover bg-center h-[620px] w-full text-white bg-transparent">
         <div class="mx-auto px-4">
             <div class="flex flex-col">
                 <div class="flex items-center h-16 bg-transparent relative z-20">
-                    <div class="md:hidden flex items-center">
-                        <button @click="toggleMenu" class="text-white focus:outline-none bg-transparent z-30">
-                            <i class="pi pi-bars text-2xl"></i>
-                        </button>
-                    </div>
 
-                    <div class="flex-1 flex items-center justify-center md:justify-start">
-                        <NuxtLink to="/" class="flex items-center">
-                            <img src="~/assets/images/ksk.svg" alt="Logo" class="h-8 md:h-10">
-                        </NuxtLink>
-                    </div>
-                </div>
-
-                <div class="hidden md:flex justify-center my-4">
-                    <nav class="flex gap-4 md:gap-8 text-base md:text-[20px]">
-                        <a href="/" class="hover:underline">Home</a>
-                        <a href="/about-us" class="hover:underline">About</a>
-                        <a href="/contact-us" class="hover:underline">Contact Us</a>
-                    </nav>
-                </div>
-
-                <div v-if="isMenuOpen" class="md:hidden mt-2 z-20">
-                    <nav class="flex flex-col gap-4 text-[20px]">
-                        <a href="#" class="hover:underline">Home</a>
-                        <a href="/about-us" class="hover:underline">About</a>
-                        <a href="/contact-us" class="hover:underline">Contact Us</a>
-                    </nav>
-                </div>
-
-                <div class="flex items-center justify-center flex-grow pt-24">
-                    <div class="text-center px-4 md:px-8">
-                        <h1 class="text-2xl md:text-4xl font-bold mb-4">Contact Us</h1>
-                        <p class="text-base md:text-lg">Get to discover our products and services tailored just for you.</p>
+                    <div class="flex items-center justify-center flex-grow pt-56">
+                        <div class="text-center px-4 md:px-8">
+                            <h1 class="text-2xl md:text-4xl font-bold mb-4">Contact Us</h1>
+                            <p class="text-base md:text-lg">Get to discover our products and services tailored just for you.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,11 +119,8 @@
     </div>
 </template>
 
-<script>
 
-</script>
-
-<style>
+<style scoped>
 .bg-custom-image {
     background-image: url('~/assets/images/Call-2.jpg');
 }
