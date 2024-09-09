@@ -26,7 +26,7 @@ onUnmounted(() => {
 
 <template>
     <Navbar />
-
+    <!-- done -->
     <div>
         <div class="bg-custom-image bg-cover bg-center h-[620px] text-white bg-transparent">
             <div class="mx-auto px-4">
