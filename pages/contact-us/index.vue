@@ -37,7 +37,7 @@ import Navbar from '~/layouts/navbar.vue';
                     </h3>
                 </div>
                 <p class="mt-2 text-gray-600 text-[20px] dark:text-neutral-400 text-center">
-                    +254729770974
+                    ++1(917) 6094-597
                 </p>
 
             </div>
@@ -53,7 +53,7 @@ import Navbar from '~/layouts/navbar.vue';
                     </h3>
                 </div>
                 <p class="mt-2 text-gray-600 text-[20px] dark:text-neutral-400 text-center">
-                    NY,USA
+                    USA, NewYork
                 </p>
 
             </div>
@@ -69,7 +69,7 @@ import Navbar from '~/layouts/navbar.vue';
                     </h3>
                 </div>
                 <p class="mt-2 text-gray-600 text-[20px] dark:text-neutral-400 text-center">
-                    +1923244
+                    +1(917) 6094-597
                 </p>
 
             </div>
