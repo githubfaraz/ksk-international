@@ -69,7 +69,7 @@ import Navbar from '~/layouts/navbar.vue';
                     </h3>
                 </div>
                 <p class="mt-2 text-gray-600 text-[20px] dark:text-neutral-400 text-center">
-                    +1-917-609-4597
+                    info@zemy-group.com
                 </p>
 
             </div>
