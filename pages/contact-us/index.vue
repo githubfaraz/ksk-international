@@ -37,7 +37,7 @@ import Navbar from '~/layouts/navbar.vue';
                     </h3>
                 </div>
                 <p class="mt-2 text-gray-600 text-[20px] dark:text-neutral-400 text-center">
-                    ++1(917) 6094-597
+                    +1-917-609-4597
                 </p>
 
             </div>
@@ -65,11 +65,11 @@ import Navbar from '~/layouts/navbar.vue';
                 <div class="flex flex-col space-y-2 items-center">
                     <img src="/whatsapp.svg" class="w-[80px] " alt="" srcset="">
                     <h3 class="text-[40px] font-bold text-gray-700 ">
-                        Text us
+                        Email Us
                     </h3>
                 </div>
                 <p class="mt-2 text-gray-600 text-[20px] dark:text-neutral-400 text-center">
-                    +1(917) 6094-597
+                    +1-917-609-4597
                 </p>
 
             </div>
