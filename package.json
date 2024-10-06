@@ -12,8 +12,7 @@
   "dependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@primevue/themes": "^4.0.2",
-    "lucide-vue": "^0.436.0",
-    "lucide-vue-next": "^0.436.0",
+    "lucide-vue-next": "^0.447.0",
     "nuxt": "^3.12.4",
     "primeicons": "^7.0.0",
     "primevue": "^4.0.2",
